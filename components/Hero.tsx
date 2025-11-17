@@ -75,7 +75,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative h-[55vh] md:h-[80vh] flex items-end md:items-center justify-center overflow-hidden pb-12 md:pb-0">
+    <section className="relative h-[55vh] md:h-[80vh] flex items-end md:items-center justify-center overflow-hidden pb-20 md:pb-0">
       {/* Background Slider with Parallax */}
       <div
         ref={heroRef}
@@ -194,7 +194,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container-custom px-4">
+      <div className="relative z-10 container-custom px-4 pt-8 md:pt-0">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -227,7 +227,7 @@ export default function Hero() {
           {/* Stats/Features */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap justify-center gap-6 md:gap-8 mb-8"
+            className="flex flex-nowrap justify-center gap-3 sm:gap-4 md:gap-8 mb-8"
           >
             {[
               { number: '10+', label: 'Ani experiență' },
@@ -239,12 +239,12 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.8 + index * 0.1 }}
-                className="text-center"
+                className="text-center flex-1 min-w-0"
               >
-                <div className="text-2xl md:text-3xl font-serif text-white font-semibold mb-1">
+                <div className="text-xl sm:text-2xl md:text-3xl font-serif text-white font-semibold mb-1">
                   {stat.number}
                 </div>
-                <div className="text-white/80 text-sm">{stat.label}</div>
+                <div className="text-white/80 text-xs sm:text-sm">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
