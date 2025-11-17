@@ -35,6 +35,13 @@ const featuredProducts: Product[] = [
     image: '/products/ecler.jpg',
     category: 'Prăjituri',
   },
+  {
+    id: '5',
+    name: 'Croissant cu Ciocolată',
+    description: 'Croissant proaspăt cu ciocolată belgiană',
+    image: '/products/croissant.jpg',
+    category: 'Prăjituri',
+  },
 ]
 
 export default function FeaturedProducts() {
@@ -63,7 +70,13 @@ export default function FeaturedProducts() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
           {featuredProducts.map((product, index) => (
-            <ProductCard key={product.id} product={product} index={index} inView={inView} />
+            <ProductCard 
+              key={product.id} 
+              product={product} 
+              index={index} 
+              inView={inView}
+              isMobileOnly={index === 3}
+            />
           ))}
         </div>
 
@@ -82,7 +95,7 @@ export default function FeaturedProducts() {
   )
 }
 
-function ProductCard({ product, index, inView }: { product: Product; index: number; inView: boolean }) {
+function ProductCard({ product, index, inView, isMobileOnly = false }: { product: Product; index: number; inView: boolean; isMobileOnly?: boolean }) {
   const [cardRef, cardInView] = useInView({
     triggerOnce: true,
     threshold: 0.2,
@@ -94,7 +107,7 @@ function ProductCard({ product, index, inView }: { product: Product; index: numb
       initial={{ opacity: 0, y: 50 }}
       animate={cardInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative"
+      className={`group relative ${isMobileOnly ? 'block md:hidden' : ''}`}
     >
       <div className="card-hover bg-white rounded-lg overflow-hidden shadow-md h-full flex flex-col">
         {/* Image Container */}
