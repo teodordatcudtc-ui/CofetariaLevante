@@ -1,6 +1,6 @@
 'use client'
 
-import { use } from 'react'
+import { useParams } from 'next/navigation'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -105,10 +105,22 @@ const products: Record<string, {
     ingredients: 'Personalizat după preferințe - consultanță inclusă',
     allergens: 'Variază în funcție de opțiunile alese',
   },
+  '9': {
+    id: '9',
+    name: 'Macarons Premium',
+    description: 'Macarons cu arome variate și glazură rafinată',
+    fullDescription: 'Macarons artizanali francezi, preparați după rețete autentice. Oferim o varietate de arome rafinate, de la vanilie și ciocolată până la arome mai exotice. Fiecare macaron este o delicatesă perfectă, cu coajă crocantă și cremă cremoasă.',
+    category: 'Prăjituri',
+    price: 'De la 4 lei/buc',
+    image: '/products/macarons.jpg',
+    ingredients: 'Mere, zahăr pudră, albuș ouă, coloranți naturali, arome',
+    allergens: 'Ouă, lactoză (în unele variante)',
+  },
 }
 
-export default function ProductPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params)
+export default function ProductPage() {
+  const params = useParams()
+  const id = params?.id as string
   const product = products[id]
 
   if (!product) {
