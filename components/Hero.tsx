@@ -75,7 +75,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative h-[55vh] md:h-[80vh] flex items-end md:items-center justify-center overflow-hidden pb-20 md:pb-0">
+    <section className="relative h-[55vh] md:h-[80vh] flex items-end md:items-center justify-center overflow-hidden pt-20 md:pt-0 pb-20 md:pb-0">
       {/* Background Slider with Parallax */}
       <div
         ref={heroRef}
