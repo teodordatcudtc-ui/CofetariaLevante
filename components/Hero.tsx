@@ -75,7 +75,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[55vh] md:h-[80vh] flex items-end md:items-center justify-center overflow-hidden pb-12 md:pb-0">
       {/* Background Slider with Parallax */}
       <div
         ref={heroRef}
@@ -211,14 +211,14 @@ export default function Hero() {
 
           <motion.h1
             variants={itemVariants}
-            className="text-5xl md:text-6xl lg:text-7xl font-[family-name:var(--font-cormorant)] font-light text-white mb-4 md:mb-6 drop-shadow-2xl leading-tight tracking-wide"
+            className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-[family-name:var(--font-cormorant)] font-light text-white mb-3 md:mb-6 drop-shadow-2xl leading-tight tracking-wide"
             style={{ fontFamily: 'var(--font-cormorant), serif' }}
           >
             Cofetăria Levante
           </motion.h1>
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl lg:text-2xl text-white mb-8 md:mb-10 max-w-2xl mx-auto drop-shadow-lg font-light"
+            className="text-lg sm:text-xl md:text-xl lg:text-2xl text-white mb-6 md:mb-10 max-w-2xl mx-auto drop-shadow-lg font-light"
             style={{ fontFamily: 'var(--font-cormorant), serif' }}
           >
             Torturi și prăjituri artizanale create cu pasiune și ingrediente premium

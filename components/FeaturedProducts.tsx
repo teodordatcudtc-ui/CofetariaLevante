@@ -56,12 +56,12 @@ export default function FeaturedProducts() {
           <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">
             Produse Recomandate
           </h2>
-          <p className="text-accent text-lg max-w-2xl mx-auto">
+          <p className="hidden md:block text-accent text-lg max-w-2xl mx-auto">
             Descoperă selecția noastră de specialități create cu ingrediente de cea mai bună calitate
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
           {featuredProducts.map((product, index) => (
             <ProductCard key={product.id} product={product} index={index} inView={inView} />
           ))}
